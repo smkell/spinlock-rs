@@ -3,7 +3,8 @@
 name = "spin"
 version = "0.3.4"
 authors = [ "Mathijs van de Nes <git@mathijs.vd-nes.nl>",
-            "John Ericson <John_Ericson@Yahoo.com>" ]
+            "John Ericson <John_Ericson@Yahoo.com>",
+	    "Sean Kell <sean.michael.kell@gmail.com" ]
 license = "MIT"
 repository = "https://github.com/mvdnes/spinlock-rs.git"
 documentation = "https://mvdnes.github.io/rust-docs/spinlock-rs/spin/index.html"
@@ -14,3 +15,7 @@ They may contain data,
 They are usable without `std`
 and static initializers are available.
 """
+
+[target.x86_64-unknown-none-gnu.dependencies.core]
+git = "https://github.com/phil-opp/nightly-libcore.git"
+features = [ "disable_float" ]
