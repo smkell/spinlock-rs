@@ -12,6 +12,7 @@ notifications:
 
 script:
     - cargo build
+    - cargo rustc --target x86_64-unknown-nepheliad -- -Z no-landing-pads
     - cargo test
     - cargo doc --no-deps
     - rustdoc --test README.md -L target/debug
